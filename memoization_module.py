@@ -8,15 +8,11 @@ Original file is located at
 """
 
 # memoization_module.py
-# ---------------------------------------
-# This module handles memoization (caching)
-# for the Optimal Route Planner project.
-# ---------------------------------------
 
-# Step 1: Create an empty dictionary to store results
+#empty dictionary to store results
 memo = {}
 
-# Step 2: Function to check if a route result already exists
+#to check if a route result already exists
 def get_cached_result(source, destination):
     """
     Check if the shortest path result between
@@ -24,7 +20,7 @@ def get_cached_result(source, destination):
     """
     key = (source, destination)
     if key in memo:
-        print("\n✅ Using cached result (no recalculation needed).")
+        print("\n Using cached result (no recalculation needed).")
         distance, path = memo[key]
         print(f"Shortest distance from {source} to {destination}: {distance} km")
         print(f"Path taken: {path}")
@@ -32,7 +28,7 @@ def get_cached_result(source, destination):
     else:
         return None
 
-# Step 3: Function to store a new result in the cache
+#to store a new result in the cache
 def store_result(source, destination, distance, path):
     """
     Store a newly computed shortest path result
@@ -40,15 +36,15 @@ def store_result(source, destination, distance, path):
     """
     key = (source, destination)
     memo[key] = (distance, path)
-    print(f"\n🧠 Result stored in cache for {source} → {destination}")
+    print(f"\n Result stored in cache for {source} → {destination}")
 
-# Step 4: Function to view all cached routes (for testing)
+# to view all cached routes
 def show_all_cached_routes():
     """Display all stored route results."""
     if not memo:
-        print("\n⚠️ No routes cached yet.")
+        print("\n No routes cached yet.")
         return
-    print("\n📜 Cached Routes:")
+    print("\n Cached Routes:")
     for (source, destination), (distance, path) in memo.items():
         print(f"{source} → {destination}: {distance} km | Path: {path}")
 
