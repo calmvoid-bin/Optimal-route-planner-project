@@ -12,6 +12,8 @@ Original file is located at
 #  this file  is Agastya's ,Contains the Bellman-Ford algorithm
 # ---------------------------------------
 
+
+# this are hardcoded cities and their distances
 def bellman_ford_shortest_path(source_city, destination_city):
     graph = [
         ('CityA', 'CityB', 50),
